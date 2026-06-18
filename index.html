@@ -1,0 +1,2183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adolescent Girls Initiative for Reproductive Health Liberty (A'GIRHL) — Empowering Girls. Protecting Health. Building Futures." />
+  <meta name="keywords" content="adolescent girls, reproductive health, NGO, empowerment, Nigeria, health education, A'GIRHL" />
+  <meta property="og:title" content="A'GIRHL — Adolescent Girls Initiative for Reproductive Health Liberty" />
+  <meta property="og:description" content="Empowering adolescent girls with knowledge, dignity, and freedom to make safe choices about their reproductive health." />
+  <meta property="og:type" content="website" />
+  <title>A'GIRHL — Adolescent Girls Initiative for Reproductive Health Liberty</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ============================================================
+       CSS RESET & CUSTOM PROPERTIES
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:       #EC4899;
+      --pink-dark:  #BE185D;
+      --pink-light: #FCE7F3;
+      --pink-mid:   #F9A8D4;
+      --white:      #FFFFFF;
+      --gray-50:    #FFF5F9;
+      --gray-100:   #f3f4f6;
+      --gray-200:   #e5e7eb;
+      --gray-500:   #6b7280;
+      --gray-700:   #374151;
+      --gray-900:   #111827;
+      --shadow-sm:  0 1px 3px rgba(236,72,153,.12);
+      --shadow-md:  0 4px 20px rgba(236,72,153,.18);
+      --shadow-lg:  0 10px 40px rgba(236,72,153,.22);
+      --radius:     1rem;
+      --radius-sm:  .5rem;
+      --transition: .3s ease;
+      --nav-h:      76px;
+      --font-head:  'Playfair Display', Georgia, serif;
+      --font-body:  'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-700);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section   { padding: 6rem 0; }
+    .section-alt { background: var(--gray-50); }
+    .section-pink { background: linear-gradient(135deg, var(--pink-light) 0%, #fdf2f8 100%); }
+    .section-dark { background: linear-gradient(135deg, var(--pink-dark) 0%, #9d174d 100%); color: var(--white); }
+
+    .badge {
+      display: inline-block;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .section-dark .badge { background: rgba(255,255,255,.2); color: #fff; }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+    .section-dark .section-title { color: #fff; }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-500);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .section-dark .section-subtitle { color: rgba(255,255,255,.8); }
+
+    .text-center { text-align: center; }
+    .text-center .section-subtitle { margin: 0 auto; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 99px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(236,72,153,.4);
+    }
+    .btn-primary:hover { background: var(--pink-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(236,72,153,.45); }
+    .btn-outline {
+      border: 2px solid var(--pink);
+      color: var(--pink);
+      background: transparent;
+    }
+    .btn-outline:hover { background: var(--pink); color: #fff; transform: translateY(-2px); }
+    .btn-white {
+      background: #fff;
+      color: var(--pink-dark);
+      box-shadow: 0 4px 14px rgba(0,0,0,.12);
+    }
+    .btn-white:hover { background: var(--pink-light); transform: translateY(-2px); }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,.7);
+      color: #fff;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      transition: background .35s, box-shadow .35s;
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 2px 20px rgba(236,72,153,.12);
+      backdrop-filter: blur(12px);
+    }
+    #navbar .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .nav-logo-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .nav-logo-text { line-height: 1; }
+    .nav-logo-text .short { font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--pink); }
+    .nav-logo-text .full  { font-size: .62rem; color: var(--gray-500); max-width: 180px; letter-spacing: .01em; line-height: 1.3; }
+    #navbar.scrolled .nav-logo-text .short { color: var(--pink); }
+
+    .nav-links { display: flex; align-items: center; gap: .15rem; }
+    .nav-links a {
+      padding: .5rem .85rem;
+      font-size: .88rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    #navbar.scrolled .nav-links a { color: var(--gray-700); }
+    .nav-links a:hover, #navbar.scrolled .nav-links a:hover { color: var(--pink); }
+
+    .nav-cta {
+      background: var(--pink);
+      color: #fff !important;
+      padding: .5rem 1.25rem !important;
+      border-radius: 99px !important;
+      box-shadow: 0 4px 14px rgba(236,72,153,.35);
+    }
+    .nav-cta:hover { background: var(--pink-dark) !important; color: #fff !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: .5rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    #navbar.scrolled .hamburger span { background: var(--gray-700); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    @media (max-width: 900px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0; right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 1.5rem 2rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,.12);
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: .35s cubic-bezier(.4,0,.2,1);
+        gap: 0;
+        z-index: 999;
+      }
+      .nav-links.open { transform: translateY(0); opacity: 1; }
+      .nav-links a { color: var(--gray-700) !important; padding: .75rem 1rem; border-bottom: 1px solid var(--gray-100); }
+      .nav-cta { margin-top: .75rem; text-align: center; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a0a14 0%, #3b0a2a 40%, #6d1a4a 70%, #be185d 100%);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(236,72,153,.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(190,24,93,.3) 0%, transparent 55%),
+        radial-gradient(ellipse at 60% 80%, rgba(252,231,243,.15) 0%, transparent 50%);
+    }
+    .hero-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .08;
+      background: #fff;
+      animation: floatShape 8s ease-in-out infinite;
+    }
+    .hero-shape:nth-child(1) { width: 400px; height: 400px; top: -100px; right: -100px; animation-delay: 0s; }
+    .hero-shape:nth-child(2) { width: 250px; height: 250px; bottom: -50px; left: -50px; animation-delay: 2s; }
+    .hero-shape:nth-child(3) { width: 180px; height: 180px; top: 60%; right: 15%; animation-delay: 4s; }
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-30px) scale(1.05); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      padding: calc(var(--nav-h) + 3rem) 0 5rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .45rem 1.1rem;
+      border-radius: 99px;
+      margin-bottom: 1.75rem;
+      animation: fadeInUp .8s ease both;
+    }
+    .hero-badge i { color: var(--pink-mid); }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp .8s .15s ease both;
+    }
+    .hero-title span { color: var(--pink-mid); }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,.82);
+      line-height: 1.75;
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp .8s .3s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeInUp .8s .45s ease both;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,.15);
+      animation: fadeInUp .8s .6s ease both;
+    }
+    .hero-stat-num {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--pink-mid);
+    }
+    .hero-stat-label { font-size: .82rem; color: rgba(255,255,255,.7); margin-top: .2rem; }
+
+    .hero-image-col {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 42%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(190,24,93,.2), rgba(109,26,74,.4));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.3);
+    }
+    .hero-image-placeholder i { font-size: 5rem; margin-bottom: 1rem; }
+    .hero-image-placeholder p { font-size: .9rem; }
+
+    @media (max-width: 768px) {
+      .hero-image-col { display: none; }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.5);
+      font-size: .75rem;
+      animation: bounce 2s infinite;
+    }
+    .scroll-indicator i { font-size: 1.2rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--pink-light), var(--pink-mid));
+      border-radius: 2rem 2rem 2rem .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--pink-dark);
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-img-placeholder::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(190,24,93,.2), transparent);
+    }
+    .about-img-placeholder i { font-size: 6rem; opacity: .4; }
+    .about-img-placeholder p { font-size: .9rem; opacity: .7; margin-top: .5rem; }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 200px;
+    }
+    .about-badge-float .icon { width: 44px; height: 44px; background: var(--pink-light); border-radius: 50%; display: grid; place-items: center; color: var(--pink); font-size: 1.2rem; flex-shrink: 0; }
+    .about-badge-float .num { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--gray-900); line-height: 1; }
+    .about-badge-float .lbl { font-size: .75rem; color: var(--gray-500); }
+
+    .about-text .section-subtitle { max-width: 100%; margin-bottom: 1.5rem; }
+    .about-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .about-feature {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 1.25rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--pink);
+      transition: var(--transition);
+    }
+    .about-feature:hover { background: var(--pink-light); transform: translateX(4px); }
+    .about-feature i { color: var(--pink); font-size: 1.2rem; margin-top: .1rem; }
+    .about-feature p { font-size: .92rem; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge-float { right: 0; bottom: -1rem; }
+    }
+
+    /* ============================================================
+       VISION & MISSION
+    ============================================================ */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .vm-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .vm-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .vm-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--pink), var(--pink-dark));
+    }
+    .vm-icon {
+      width: 60px; height: 60px;
+      background: var(--pink-light);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .vm-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      color: var(--pink-dark);
+      margin-bottom: 1rem;
+    }
+    .vm-card p { font-size: .97rem; line-height: 1.75; color: var(--gray-500); }
+    .vm-card .quote-mark {
+      position: absolute;
+      bottom: 1rem; right: 1.5rem;
+      font-size: 5rem;
+      color: var(--pink-light);
+      font-family: var(--font-head);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+      .vm-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       PROGRAMS
+    ============================================================ */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      margin-top: 3rem;
+    }
+    .program-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .program-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--pink-light);
+    }
+    .program-icon {
+      width: 56px; height: 56px;
+      background: var(--pink-light);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+    .program-card:hover .program-icon { background: var(--pink); color: #fff; }
+    .program-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      color: var(--gray-900);
+    }
+    .program-card ul { display: flex; flex-direction: column; gap: .5rem; }
+    .program-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .88rem;
+      color: var(--gray-500);
+    }
+    .program-card ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+      margin-top: .45rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       IMPACT STATISTICS
+    ============================================================ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius);
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .stat-card:hover { background: rgba(255,255,255,.18); transform: translateY(-4px); }
+    .stat-icon { font-size: 2.2rem; margin-bottom: 1rem; opacity: .85; }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-plus { color: var(--pink-mid); }
+    .stat-label { font-size: .82rem; color: rgba(255,255,255,.75); margin-top: .5rem; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ============================================================
+       EXECUTIVE DIRECTOR
+    ============================================================ */
+    .ed-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .ed-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      text-align: center;
+    }
+    .ed-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--pink-light) 0%, var(--pink-mid) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--pink-dark);
+      font-size: 5rem;
+      position: relative;
+    }
+    .ed-photo i { font-size: 7rem; opacity: .4; }
+    .ed-photo-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(190,24,93,.8), transparent);
+      color: #fff;
+      padding: 2rem 1.5rem 1.25rem;
+      text-align: left;
+    }
+    .ed-photo-label h3 { font-family: var(--font-head); font-size: 1.4rem; }
+    .ed-photo-label p { font-size: .82rem; opacity: .85; margin-top: .25rem; }
+    .ed-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .ed-socials a {
+      width: 38px; height: 38px;
+      background: var(--pink-light);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: .95rem;
+      transition: var(--transition);
+    }
+    .ed-socials a:hover { background: var(--pink); color: #fff; }
+
+    .ed-content { padding: 1rem 0; }
+    .ed-content .badge { background: var(--pink-light); color: var(--pink-dark); }
+    .ed-bio { font-size: .97rem; line-height: 1.8; color: var(--gray-500); margin-bottom: 2rem; }
+    .ed-quote-block {
+      background: var(--pink-light);
+      border-left: 4px solid var(--pink);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.5rem 1.75rem;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .ed-quote-block p {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--pink-dark);
+      font-style: italic;
+    }
+    .ed-quote-block .q-icon {
+      position: absolute;
+      top: -10px; left: 1.5rem;
+      background: var(--pink);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .8rem;
+    }
+
+    @media (max-width: 900px) {
+      .ed-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ed-card { max-width: 360px; margin: 0 auto; }
+      .ed-photo { aspect-ratio: 1; }
+    }
+
+    /* ============================================================
+       GALLERY
+    ============================================================ */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+      margin: 2.5rem 0;
+    }
+    .filter-btn {
+      padding: .5rem 1.25rem;
+      border-radius: 99px;
+      font-size: .85rem;
+      font-weight: 500;
+      border: 2px solid var(--gray-200);
+      color: var(--gray-500);
+      transition: var(--transition);
+      background: #fff;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+      background: var(--pink-light);
+    }
+
+    .gallery-grid {
+      columns: 4;
+      column-gap: 1rem;
+    }
+    @media (max-width: 1024px) { .gallery-grid { columns: 3; } }
+    @media (max-width: 640px)  { .gallery-grid { columns: 2; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+    .gallery-placeholder {
+      width: 100%;
+      background: linear-gradient(135deg, var(--pink-light), #fce7f3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      color: var(--pink);
+      font-size: .8rem;
+      padding: 2rem 1rem;
+    }
+    .gallery-placeholder i { font-size: 2.5rem; opacity: .5; }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(190,24,93,.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox-inner {
+      max-width: 800px;
+      width: 100%;
+      background: #1a0a14;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .lb-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 1;
+      transition: var(--transition);
+    }
+    .lb-close:hover { background: var(--pink); }
+    #lightbox-content {
+      width: 100%;
+      min-height: 300px;
+      background: linear-gradient(135deg, var(--pink-light), #fdf2f8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pink);
+      font-size: 3rem;
+    }
+    #lightbox-caption {
+      padding: 1.25rem 1.5rem;
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testimonials-wrap { position: relative; overflow: hidden; margin-top: 3rem; }
+    .testimonials-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .testimonial-card {
+      flex: 0 0 calc(33.33% - 1rem);
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    @media (max-width: 900px) { .testimonial-card { flex: 0 0 calc(50% - .75rem); } }
+    @media (max-width: 600px) { .testimonial-card { flex: 0 0 85%; } }
+
+    .testimonial-stars { color: #f59e0b; font-size: .9rem; letter-spacing: .1em; }
+    .testimonial-text { font-size: .95rem; line-height: 1.75; color: var(--gray-500); font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-100); }
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--pink-light);
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .author-name { font-weight: 600; font-size: .9rem; color: var(--gray-900); }
+    .author-role { font-size: .8rem; color: var(--gray-500); }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .slider-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--pink);
+      color: var(--pink);
+      display: grid;
+      place-items: center;
+      transition: var(--transition);
+      background: #fff;
+    }
+    .slider-btn:hover { background: var(--pink); color: #fff; }
+    .slider-dots { display: flex; align-items: center; gap: .5rem; }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .dot.active { background: var(--pink); width: 24px; border-radius: 4px; }
+
+    /* ============================================================
+       PARTNERS
+    ============================================================ */
+    .partners-track-wrap { overflow: hidden; margin-top: 3rem; position: relative; }
+    .partners-track-wrap::before,
+    .partners-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 1;
+    }
+    .partners-track-wrap::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .partners-track-wrap::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+
+    .partners-track {
+      display: flex;
+      gap: 2rem;
+      animation: scrollPartners 20s linear infinite;
+    }
+    .partners-track:hover { animation-play-state: paused; }
+    @keyframes scrollPartners {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .partner-logo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 80px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      color: var(--gray-500);
+      font-size: .75rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .partner-logo i { font-size: 1.5rem; color: var(--pink); }
+    .partner-logo:hover { border-color: var(--pink); background: var(--pink-light); }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .contact-icon {
+      width: 48px; height: 48px;
+      background: var(--pink-light);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-item h4 { font-weight: 600; font-size: .9rem; color: var(--gray-900); margin-bottom: .25rem; }
+    .contact-item p, .contact-item a { font-size: .9rem; color: var(--gray-500); }
+    .contact-item a:hover { color: var(--pink); }
+
+    .contact-socials { display: flex; gap: .75rem; margin-top: 1rem; }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--pink-light);
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .social-link:hover { background: var(--pink); color: #fff; transform: translateY(-3px); }
+    .social-link.whatsapp:hover { background: #25D366; }
+    .social-link.facebook:hover { background: #1877F2; }
+    .social-link.instagram:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .social-link.twitter:hover  { background: #1DA1F2; }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    label { font-size: .85rem; font-weight: 500; color: var(--gray-700); }
+    input, select, textarea {
+      width: 100%;
+      padding: .85rem 1.1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: .95rem;
+      color: var(--gray-700);
+      transition: var(--transition);
+      background: #fff;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+    textarea { resize: vertical; min-height: 130px; }
+    .form-submit { align-self: flex-start; }
+
+    /* Newsletter bar */
+    .newsletter-bar {
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      padding: 3.5rem 0;
+      text-align: center;
+    }
+    .newsletter-bar h2 { font-family: var(--font-head); font-size: 1.8rem; color: #fff; margin-bottom: .5rem; }
+    .newsletter-bar p { color: rgba(255,255,255,.8); margin-bottom: 1.5rem; }
+    .newsletter-form {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto;
+      gap: .5rem;
+    }
+    .newsletter-form input {
+      flex: 1;
+      border: none;
+      border-radius: 99px;
+      padding: .85rem 1.5rem;
+    }
+    .newsletter-form input:focus { box-shadow: 0 0 0 3px rgba(255,255,255,.3); }
+    .newsletter-form button {
+      background: var(--gray-900);
+      color: #fff;
+      border-radius: 99px;
+      padding: .85rem 1.75rem;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: var(--transition);
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover { background: var(--pink-dark); transform: translateY(-2px); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #0d0510;
+      color: rgba(255,255,255,.7);
+      padding: 5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-brand .nav-logo-icon { margin-bottom: 1.25rem; }
+    .footer-brand .short { color: var(--pink-mid) !important; }
+    .footer-brand .full  { color: rgba(255,255,255,.5) !important; }
+    .footer-desc { font-size: .88rem; line-height: 1.7; margin-top: .75rem; max-width: 280px; }
+    .footer-socials { display: flex; gap: .6rem; margin-top: 1.5rem; }
+    .footer-socials a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15);
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      transition: var(--transition);
+    }
+    .footer-socials a:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+
+    .footer-col h4 { color: #fff; font-weight: 600; font-size: .95rem; margin-bottom: 1.25rem; }
+    .footer-links { display: flex; flex-direction: column; gap: .65rem; }
+    .footer-links a { font-size: .87rem; transition: var(--transition); }
+    .footer-links a:hover { color: var(--pink-mid); padding-left: 4px; }
+
+    .footer-contact-list { display: flex; flex-direction: column; gap: .9rem; }
+    .footer-contact-list li { display: flex; gap: .75rem; font-size: .85rem; align-items: flex-start; }
+    .footer-contact-list i { color: var(--pink-mid); margin-top: .1rem; width: 16px; }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: .82rem;
+      color: rgba(255,255,255,.4);
+    }
+    .footer-bottom a { color: rgba(255,255,255,.4); }
+    .footer-bottom a:hover { color: var(--pink-mid); }
+    .footer-heart { color: var(--pink); }
+
+    /* ============================================================
+       WHATSAPP FLOATING BUTTON
+    ============================================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      transition: var(--transition);
+      animation: waPulse 2.5s ease infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,.6); }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.4); }
+      50%      { box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 0 0 14px rgba(37,211,102,0); }
+    }
+    .wa-tooltip {
+      position: fixed;
+      bottom: 2rem;
+      right: 5rem;
+      background: #fff;
+      color: var(--gray-900);
+      font-size: .82rem;
+      font-weight: 500;
+      padding: .5rem 1rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .wa-float:hover ~ .wa-tooltip { opacity: 1; }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* Misc decorative divider */
+    .wave-divider { line-height: 0; }
+    .wave-divider svg { display: block; }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      padding: 1.25rem;
+      background: #d1fae5;
+      color: #065f46;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Scroll to top */
+    #back-to-top {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 2rem;
+      width: 42px; height: 42px;
+      background: var(--pink);
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+    #back-to-top.show { opacity: 1; pointer-events: all; }
+    #back-to-top:hover { background: var(--pink-dark); transform: translateY(-3px); }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--gray-900);
+      color: #fff;
+      padding: .85rem 2rem;
+      border-radius: 99px;
+      font-size: .9rem;
+      z-index: 9999;
+      transition: transform .4s, opacity .4s;
+      opacity: 0;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="container">
+    <a href="#" class="nav-logo" aria-label="A'GIRHL Home">
+      <div class="nav-logo-icon" style="background:none;padding:0;overflow:hidden;"><img src="LOGO.jpg" alt="A'GIRHL Logo" style="width:46px;height:46px;object-fit:cover;border-radius:50%;display:block;" /></div>
+      <div class="nav-logo-text">
+        <div class="short">A'GIRHL</div>
+        <div class="full">Adolescent Girls Initiative for Reproductive Health Liberty</div>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none"><a href="#home" role="menuitem">Home</a></li>
+      <li role="none"><a href="#about" role="menuitem">About Us</a></li>
+      <li role="none"><a href="#vision" role="menuitem">Vision &amp; Mission</a></li>
+      <li role="none"><a href="#programs" role="menuitem">Programs</a></li>
+      <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+      <li role="none"><a href="#director" role="menuitem">Executive Director</a></li>
+      <li role="none"><a href="#stories" role="menuitem">Impact Stories</a></li>
+      <li role="none"><a href="#partners" role="menuitem">Partners</a></li>
+      <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact Us</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" aria-labelledby="hero-title">
+  <div id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-shapes">
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          Empowering Adolescent Girls Across Communities
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          Empowering Girls.<br/>
+          Protecting <span>Health.</span><br/>
+          Building Futures.
+        </h1>
+
+        <p class="hero-subtitle">
+          "A world where every adolescent girl has the knowledge, resources, and freedom to make safe choices about her reproductive health and pursue her dreams with dignity."
+        </p>
+
+        <div class="hero-actions">
+          <a href="#about"    class="btn btn-primary"><i class="fas fa-arrow-down"></i> Learn More</a>
+          <a href="#programs" class="btn btn-outline-white">Join Our Mission</a>
+          <a href="#contact"  class="btn btn-outline-white"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Girls Reached</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">20+</div>
+            <div class="hero-stat-label">Community Outreaches</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Schools Engaged</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Partners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column decorative -->
+    <div class="hero-image-col" aria-hidden="true">
+      <div class="hero-image-placeholder">
+        <i class="fas fa-user-group"></i>
+        <p>Adolescent Girls Initiative</p>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-img-placeholder" aria-hidden="true">
+          <i class="fas fa-users"></i>
+          <p>Community outreach</p>
+        </div>
+        <div class="about-badge-float">
+          <div class="icon"><i class="fas fa-heart"></i></div>
+          <div>
+            <div class="num">500+</div>
+            <div class="lbl">Girls Empowered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-2">
+        <span class="badge"><i class="fas fa-info-circle"></i>&nbsp; Who We Are</span>
+        <h2 class="section-title">Dedicated to Protecting Girls' Health &amp; Dignity</h2>
+        <p class="section-subtitle">
+          Adolescent Girls Initiative for Reproductive Health Liberty (A'GIRHL) is a youth-centered organization dedicated to protecting the health, dignity, and rights of adolescent girls.
+        </p>
+        <p class="section-subtitle" style="margin-top:.75rem;">
+          We provide accurate, age-appropriate reproductive health education and connect girls to safe, stigma-free services so they can make informed choices about their bodies and futures.
+        </p>
+        <p class="section-subtitle" style="margin-top:.75rem;">
+          Through community engagement, partnerships, and advocacy, we work to break the silence around reproductive health and create a world where every girl can live freely, without shame, and reach her full potential.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <i class="fas fa-graduation-cap"></i>
+            <p><strong>Age-Appropriate Education</strong> — Providing accurate, accessible reproductive health knowledge to adolescent girls.</p>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-hands-holding-heart"></i>
+            <p><strong>Stigma-Free Services</strong> — Connecting girls to safe and confidential reproductive health services.</p>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-bullhorn"></i>
+            <p><strong>Community Advocacy</strong> — Breaking silence through campaigns, partnerships, and policy engagement.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <a href="#programs" class="btn btn-primary">Explore Our Programs <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider -->
+<div class="wave-divider" aria-hidden="true" style="background:#FFF5F9;">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,0 1440,60 L1440,0 L0,0 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ============================================================
+     VISION & MISSION
+============================================================ -->
+<section id="vision" class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Vision &amp; Mission</span>
+      <h2 class="section-title">What Drives Us Forward</h2>
+      <p class="section-subtitle">Our vision and mission are the compass guiding every outreach, program, and advocacy campaign we undertake.</p>
+    </div>
+
+    <div class="vm-grid">
+      <div class="vm-card reveal reveal-delay-1">
+        <div class="vm-icon"><i class="fas fa-eye"></i></div>
+        <h3>Our Vision</h3>
+        <p>"A world where every adolescent girl has the knowledge, resources, and freedom to make safe choices about her reproductive health, live without stigma, and pursue her dreams with dignity."</p>
+        <span class="quote-mark">"</span>
+      </div>
+
+      <div class="vm-card reveal reveal-delay-2">
+        <div class="vm-icon"><i class="fas fa-compass"></i></div>
+        <h3>Our Mission</h3>
+        <p>"To empower adolescent girls with accurate information, safe access to reproductive health services, and the confidence to make informed choices about their bodies and futures. We work to protect their health, dignity, and rights so every girl can live freely and reach her full potential."</p>
+        <span class="quote-mark">"</span>
+      </div>
+    </div>
+
+    <!-- Core values strip -->
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;justify-content:center;">
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-shield-heart" style="color:var(--pink);"></i> Dignity
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-lightbulb" style="color:var(--pink);"></i> Education
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-people-group" style="color:var(--pink);"></i> Community
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-balance-scale" style="color:var(--pink);"></i> Equity
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-hand-holding-heart" style="color:var(--pink);"></i> Compassion
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.6rem 1.25rem;background:#fff;border-radius:99px;box-shadow:var(--shadow-sm);font-size:.88rem;font-weight:500;color:var(--pink-dark);">
+        <i class="fas fa-star" style="color:var(--pink);"></i> Empowerment
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRAMS
+============================================================ -->
+<section id="programs" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Programs &amp; Services</span>
+      <h2 class="section-title">How We Empower Girls</h2>
+      <p class="section-subtitle">Our comprehensive programs address reproductive health, advocacy, mentorship, and community outreach to create lasting impact.</p>
+    </div>
+
+    <div class="programs-grid">
+      <div class="program-card reveal reveal-delay-1">
+        <div class="program-icon"><i class="fas fa-book-open-reader"></i></div>
+        <h3>Reproductive Health Education</h3>
+        <ul>
+          <li>Age-appropriate health education</li>
+          <li>Menstrual health awareness</li>
+          <li>Personal hygiene education</li>
+          <li>Safe and accurate health information</li>
+        </ul>
+      </div>
+
+      <div class="program-card reveal reveal-delay-2">
+        <div class="program-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <h3>Community Outreach</h3>
+        <ul>
+          <li>School-based awareness programs</li>
+          <li>Community sensitization campaigns</li>
+          <li>Youth engagement activities</li>
+          <li>Peer educator training</li>
+        </ul>
+      </div>
+
+      <div class="program-card reveal reveal-delay-3">
+        <div class="program-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3>Advocacy</h3>
+        <ul>
+          <li>Rights awareness campaigns</li>
+          <li>Policy engagement</li>
+          <li>Gender equality initiatives</li>
+          <li>Stigma-reduction programs</li>
+        </ul>
+      </div>
+
+      <div class="program-card reveal reveal-delay-1">
+        <div class="program-icon"><i class="fas fa-hospital"></i></div>
+        <h3>Health Service Referrals</h3>
+        <ul>
+          <li>Access to safe reproductive health services</li>
+          <li>Counseling support</li>
+          <li>Referral networks</li>
+          <li>Follow-up care linkage</li>
+        </ul>
+      </div>
+
+      <div class="program-card reveal reveal-delay-2">
+        <div class="program-icon"><i class="fas fa-star"></i></div>
+        <h3>Mentorship &amp; Empowerment</h3>
+        <ul>
+          <li>Leadership development</li>
+          <li>Confidence building</li>
+          <li>Life skills training</li>
+          <li>Career guidance &amp; goal setting</li>
+        </ul>
+      </div>
+
+      <div class="program-card reveal reveal-delay-3" style="background:linear-gradient(135deg,var(--pink-light),#fdf2f8);border-color:var(--pink-mid);">
+        <div class="program-icon" style="background:var(--pink);color:#fff;"><i class="fas fa-heart"></i></div>
+        <h3 style="color:var(--pink-dark);">Get Involved</h3>
+        <p style="font-size:.9rem;color:var(--gray-500);line-height:1.7;margin-top:.5rem;">Join our mission as a volunteer, partner, or donor and help us reach more adolescent girls in need of education and support.</p>
+        <div style="margin-top:auto;padding-top:1rem;">
+          <a href="#contact" class="btn btn-primary" style="font-size:.88rem;padding:.7rem 1.5rem;">Join Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     IMPACT STATISTICS
+============================================================ -->
+<section id="impact" class="section section-dark">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Our Impact</span>
+      <h2 class="section-title">Creating Real Change</h2>
+      <p class="section-subtitle">Every number represents a girl whose life has been touched, a community that has been educated, and a future that has been protected.</p>
+    </div>
+
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-icon">👧</div>
+        <div class="stat-num"><span class="counter" data-target="500">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Girls Reached</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-icon">🏘️</div>
+        <div class="stat-num"><span class="counter" data-target="20">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Community Outreaches</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-icon">🏫</div>
+        <div class="stat-num"><span class="counter" data-target="15">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Schools Engaged</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <div class="stat-icon">🤝</div>
+        <div class="stat-num"><span class="counter" data-target="50">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Volunteers Mobilized</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-icon">🌐</div>
+        <div class="stat-num"><span class="counter" data-target="10">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">Partnerships Established</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXECUTIVE DIRECTOR
+============================================================ -->
+<section id="director" class="section section-pink">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <span class="badge">Leadership</span>
+      <h2 class="section-title">Meet Our Executive Director</h2>
+    </div>
+
+    <div class="ed-grid">
+      <div class="ed-card reveal">
+        <div class="ed-photo" aria-label="Executive Director photo" style="background:none;padding:0;">
+          <img src="Tharma.jpeg" alt="Executive Director of A'GIRHL" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+          <div class="ed-photo-label">
+            <h3>Executive Director</h3>
+            <p>A'GIRHL — Adolescent Girls Initiative</p>
+          </div>
+        </div>
+        <div class="ed-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2348106180658" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="ed-content reveal reveal-delay-2">
+        <span class="badge">Executive Director &mdash; A'GIRHL</span>
+        <h2 class="section-title" style="margin-bottom:1.25rem;">Championing Girls' Health &amp; Rights</h2>
+
+        <p class="ed-bio">
+          The Executive Director of A'GIRHL leads the organization's vision to empower adolescent girls across communities. With a deep commitment to reproductive health rights, dignity, and youth empowerment, she drives programs that transform lives.
+        </p>
+        <p class="ed-bio">
+          Through strategic partnerships, community engagement, and unwavering advocacy, she has built A'GIRHL into a trusted voice for adolescent girls — ensuring they have the knowledge, support, and confidence to make informed choices about their health and futures.
+        </p>
+
+        <div class="ed-quote-block">
+          <div class="q-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Every girl deserves the knowledge, confidence, and support needed to make informed decisions about her health and future. Together, we are building a generation of empowered girls who can thrive without fear, stigma, or limitation."</p>
+        </div>
+
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in Touch</a>
+          <a href="#programs" class="btn btn-outline">View Programs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+============================================================ -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Gallery of Impact</span>
+      <h2 class="section-title">Stories Told Through Images</h2>
+      <p class="section-subtitle">Glimpses from our outreaches, school programs, community campaigns, and advocacy events.</p>
+    </div>
+
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">All Activities</button>
+      <button class="filter-btn" data-filter="outreach">Outreaches</button>
+      <button class="filter-btn" data-filter="school">School Programs</button>
+      <button class="filter-btn" data-filter="community">Community</button>
+      <button class="filter-btn" data-filter="training">Training</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Cards are generated by JS for maintainability -->
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div id="lightbox-inner">
+    <button class="lb-close" id="lb-close" aria-label="Close preview"><i class="fas fa-times"></i></button>
+    <div id="lightbox-content" aria-hidden="true">
+      <i class="fas fa-image"></i>
+    </div>
+    <div id="lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TESTIMONIALS / IMPACT STORIES
+============================================================ -->
+<section id="stories" class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Impact Stories</span>
+      <h2 class="section-title">Voices of Change</h2>
+      <p class="section-subtitle">Hear from the girls, families, and communities whose lives A'GIRHL has touched.</p>
+    </div>
+
+    <div class="testimonials-wrap reveal">
+      <div class="testimonials-track" id="testimonials-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Before A'GIRHL came to our school, I was too embarrassed to talk about my health. Now I understand my body and I'm not afraid to ask for help. They gave me confidence I never thought I'd have."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="author-name">Amara, 16</div>
+              <div class="author-role">Program Beneficiary</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"A'GIRHL's community outreach changed how our village sees adolescent girls' health. We learned that reproductive health is not a taboo — it is a right. My daughter now has the information to make safe choices."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="author-name">Mrs. Fatima K.</div>
+              <div class="author-role">Community Parent</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a school counselor, I've seen A'GIRHL's education programs transform shy, uninformed girls into confident young women who know their rights. The change in our students is remarkable."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="author-name">Mr. David O.</div>
+              <div class="author-role">School Counselor</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I joined A'GIRHL as a volunteer and it changed my life. Seeing the girls' faces light up when they finally understand they have rights — that they matter — gives me purpose every single day."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="author-name">Chioma A., 22</div>
+              <div class="author-role">A'GIRHL Volunteer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was struggling silently. A'GIRHL's counseling sessions and referral support helped me access care I didn't know I deserved. I am now healthier, happier, and more confident about my future."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <div class="author-name">Grace, 17</div>
+              <div class="author-role">Program Beneficiary</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Partnering with A'GIRHL has been one of the most rewarding decisions our organization has made. Their dedication to adolescent girls' health is genuine, impactful, and deeply needed in our communities."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-building"></i></div>
+            <div>
+              <div class="author-name">Partner Organization</div>
+              <div class="author-role">Supporting NGO Representative</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-btn" id="prev-btn" aria-label="Previous testimonials"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-dots" id="slider-dots"></div>
+      <button class="slider-btn" id="next-btn" aria-label="Next testimonials"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PARTNERS
+============================================================ -->
+<section id="partners" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge">Partners &amp; Supporters</span>
+      <h2 class="section-title">Together We Are Stronger</h2>
+      <p class="section-subtitle">We collaborate with organizations, schools, government agencies, and community leaders who share our commitment to adolescent girls' health and rights.</p>
+    </div>
+
+    <div class="partners-track-wrap reveal">
+      <div class="partners-track" id="partners-track">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER
+============================================================ -->
+<div class="newsletter-bar" id="newsletter">
+  <div class="container">
+    <h2>Stay Connected with A'GIRHL</h2>
+    <p>Subscribe to our newsletter for updates on programs, events, and impact stories.</p>
+    <form class="newsletter-form" id="newsletter-form" novalidate>
+      <input type="email" placeholder="Enter your email address" aria-label="Email address" required />
+      <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <span class="badge">Get in Touch</span>
+      <h2 class="section-title">We'd Love to Hear From You</h2>
+      <p class="section-subtitle">Whether you want to partner with us, volunteer, donate, or simply learn more — reach out and let's build a better future for adolescent girls together.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <a href="tel:+2348106180658">+234 810 618 0658</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@agirhl.org">info@agirhl.org</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <h4>Office Location</h4>
+              <p>Nigeria (Address available upon request)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <h4 style="font-weight:600;margin-bottom:1rem;color:var(--gray-900);">Follow Us</h4>
+          <div class="contact-socials">
+            <a href="https://wa.me/2348106180658" class="social-link whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link facebook"  aria-label="Facebook"  ><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link instagram" aria-label="Instagram" ><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link twitter"   aria-label="Twitter/X" ><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div style="background:#fff;border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-head);font-size:1.4rem;color:var(--gray-900);margin-bottom:1.5rem;">Send Us a Message</h3>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">Full Name *</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="cf-phone">Phone Number</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+234 xxx xxx xxxx" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address *</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject *</label>
+              <select id="cf-subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option>Partnership Inquiry</option>
+                <option>Volunteer Opportunity</option>
+                <option>Donation / Support</option>
+                <option>Program Information</option>
+                <option>Media / Press</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message *</label>
+              <textarea id="cf-message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <div class="form-success" id="form-success">
+              <i class="fas fa-check-circle"></i> Your message has been sent! We'll get back to you within 24 hours.
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon" style="background:none;padding:0;overflow:hidden;"><img src="LOGO.jpg" alt="A'GIRHL Logo" style="width:46px;height:46px;object-fit:cover;border-radius:50%;display:block;" /></div>
+          <div class="nav-logo-text">
+            <div class="short" style="color:var(--pink-mid);">A'GIRHL</div>
+            <div class="full" style="color:rgba(255,255,255,.45);">Adolescent Girls Initiative for Reproductive Health Liberty</div>
+          </div>
+        </div>
+        <p class="footer-desc">Empowering adolescent girls with knowledge, dignity, and the freedom to make safe choices about their reproductive health — building healthier, stronger communities across Nigeria.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/2348106180658" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#vision">Vision &amp; Mission</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#director">Executive Director</a></li>
+          <li><a href="#stories">Impact Stories</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div class="footer-col">
+        <h4>Our Programs</h4>
+        <ul class="footer-links">
+          <li><a href="#programs">Health Education</a></li>
+          <li><a href="#programs">Community Outreach</a></li>
+          <li><a href="#programs">Advocacy</a></li>
+          <li><a href="#programs">Health Service Referrals</a></li>
+          <li><a href="#programs">Mentorship</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-phone"></i><a href="tel:+2348106180658">+234 810 618 0658</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@agirhl.org">info@agirhl.org</a></li>
+          <li><i class="fas fa-location-dot"></i><span>Nigeria</span></li>
+          <li><i class="fas fa-clock"></i><span>Mon–Fri: 9AM–5PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> A'GIRHL — Adolescent Girls Initiative for Reproductive Health Liberty. All rights reserved.</p>
+      <p>Made with <span class="footer-heart">♥</span> for adolescent girls everywhere.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING ELEMENTS
+============================================================ -->
+<a href="https://wa.me/2348106180658" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* ---- Helpers ---- */
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const showToast = (msg, dur = 3000) => {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), dur);
+  };
+
+  /* ---- Year ---- */
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---- Navbar scroll ---- */
+  const navbar = $('#navbar');
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    $('#back-to-top').classList.toggle('show', window.scrollY > 400);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---- Hamburger ---- */
+  const hamburger = $('#hamburger');
+  const navLinks  = $('#nav-links');
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  $$('#nav-links a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }));
+
+  /* ---- Back to top ---- */
+  $('#back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ---- Reveal on scroll ---- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  $$('.reveal').forEach(el => observer.observe(el));
+
+  /* ---- Counters ---- */
+  let counted = false;
+  const counterObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !counted) {
+      counted = true;
+      $$('.counter').forEach(el => {
+        const target = +el.dataset.target;
+        const dur = 2000;
+        const step = target / (dur / 16);
+        let cur = 0;
+        const tick = () => {
+          cur = Math.min(cur + step, target);
+          el.textContent = Math.floor(cur);
+          if (cur < target) requestAnimationFrame(tick);
+        };
+        tick();
+      });
+    }
+  }, { threshold: 0.3 });
+  const statsGrid = $('#stats-grid');
+  if (statsGrid) counterObs.observe(statsGrid);
+
+  /* ---- Gallery ---- */
+  const galleryItems = [
+    { label: 'Community Health Outreach', category: 'outreach', icon: 'fa-hands-holding-heart', h: 220 },
+    { label: 'School Sensitization Program', category: 'school', icon: 'fa-school', h: 280 },
+    { label: 'Girls Leadership Workshop', category: 'training', icon: 'fa-users', h: 200 },
+    { label: 'Menstrual Health Awareness', category: 'community', icon: 'fa-heart', h: 260 },
+    { label: 'Advocacy Campaign Launch', category: 'outreach', icon: 'fa-bullhorn', h: 240 },
+    { label: 'Volunteer Orientation Day', category: 'training', icon: 'fa-star', h: 200 },
+    { label: 'Peer Educator Training', category: 'training', icon: 'fa-graduation-cap', h: 260 },
+    { label: 'Community Sensitization Drive', category: 'community', icon: 'fa-people-group', h: 210 },
+    { label: 'Health Screening Referral Event', category: 'outreach', icon: 'fa-hospital', h: 280 },
+    { label: 'School Awareness Week', category: 'school', icon: 'fa-book-open', h: 220 },
+    { label: 'Girls Confidence Workshop', category: 'training', icon: 'fa-lightbulb', h: 250 },
+    { label: 'Partnership Signing Ceremony', category: 'community', icon: 'fa-handshake', h: 200 },
+  ];
+
+  const galleryGrid = $('#gallery-grid');
+  const renderGallery = (filter = 'all') => {
+    galleryGrid.innerHTML = '';
+    galleryItems
+      .filter(i => filter === 'all' || i.category === filter)
+      .forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.setAttribute('data-category', item.category);
+        div.setAttribute('tabindex', '0');
+        div.setAttribute('role', 'button');
+        div.setAttribute('aria-label', `View ${item.label}`);
+        div.innerHTML = `
+          <div class="gallery-placeholder" style="min-height:${item.h}px;">
+            <i class="fas ${item.icon}"></i>
+            <span>${item.label}</span>
+          </div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        `;
+        div.addEventListener('click', () => openLightbox(item.label));
+        div.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(item.label); });
+        galleryGrid.appendChild(div);
+      });
+  };
+  renderGallery();
+
+  $$('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGallery(btn.dataset.filter);
+    });
+  });
+
+  /* Lightbox */
+  const lb = $('#lightbox');
+  const openLightbox = (caption) => {
+    $('#lightbox-caption').textContent = caption;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  $('#lb-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+  /* ---- Testimonials slider ---- */
+  const track     = $('#testimonials-track');
+  const dotsWrap  = $('#slider-dots');
+  const cards     = $$('.testimonial-card');
+  let currentSlide = 0;
+  let cardsPerView = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+  const totalSlides = Math.max(1, cards.length - cardsPerView + 1);
+
+  // Build dots
+  for (let i = 0; i < totalSlides; i++) {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Slide ${i + 1}`);
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  }
+  const dots = $$('.dot');
+
+  const goTo = (i) => {
+    currentSlide = Math.max(0, Math.min(i, totalSlides - 1));
+    const cardW = cards[0].offsetWidth + 24; // gap
+    track.style.transform = `translateX(-${currentSlide * cardW}px)`;
+    dots.forEach((d, j) => d.classList.toggle('active', j === currentSlide));
+  };
+  $('#prev-btn').addEventListener('click', () => goTo(currentSlide - 1));
+  $('#next-btn').addEventListener('click', () => goTo(currentSlide + 1));
+
+  // Auto-advance
+  setInterval(() => goTo((currentSlide + 1) % totalSlides), 5000);
+
+  window.addEventListener('resize', () => {
+    cardsPerView = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+    goTo(0);
+  });
+
+  /* ---- Partners carousel ---- */
+  const partnerData = [
+    { name: 'Health Ministry',     icon: 'fa-hospital' },
+    { name: 'Schools Network',     icon: 'fa-school' },
+    { name: 'NGO Alliance',        icon: 'fa-handshake' },
+    { name: 'Youth Foundation',    icon: 'fa-users' },
+    { name: 'Community Trust',     icon: 'fa-building' },
+    { name: 'Women Rights Org',    icon: 'fa-venus' },
+    { name: 'Education Board',     icon: 'fa-graduation-cap' },
+    { name: 'Health NGO Partners', icon: 'fa-heart-pulse' },
+    { name: 'Advocacy Network',    icon: 'fa-bullhorn' },
+    { name: 'Local Government',    icon: 'fa-landmark' },
+  ];
+  const pt = $('#partners-track');
+  // Duplicate for infinite scroll illusion
+  [...partnerData, ...partnerData].forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'partner-logo';
+    div.innerHTML = `<i class="fas ${p.icon}"></i>${p.name}`;
+    pt.appendChild(div);
+  });
+
+  /* ---- Contact form ---- */
+  $('#contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    setTimeout(() => {
+      $('#form-success').style.display = 'block';
+      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      btn.style.background = '#10b981';
+      showToast('Message sent successfully!');
+      setTimeout(() => {
+        this.reset();
+        $('#form-success').style.display = 'none';
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        btn.style.background = '';
+      }, 4000);
+    }, 1500);
+  });
+
+  /* ---- Newsletter form ---- */
+  $('#newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    setTimeout(() => {
+      btn.textContent = 'Subscribed! ✓';
+      showToast('You\'re now subscribed to our newsletter!');
+      this.reset();
+      setTimeout(() => { btn.disabled = false; btn.innerHTML = 'Subscribe <i class="fas fa-arrow-right"></i>'; }, 3000);
+    }, 1000);
+  });
+</script>
+</body>
+</html>
